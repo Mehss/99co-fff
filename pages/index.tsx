@@ -2,12 +2,14 @@ import React, {useEffect, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import reactStringReplace from "react-string-replace";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import ProductDescriptionStringReplacer from "../components/ProductDescriptionStringReplacer";
-import styles from '../styles/Home.module.css';
 import "swiper/css";
 import "swiper/css/navigation";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import globalStore from '../store/globalStore';
+import { GetServerSideProps } from "next";
+import ProductDescriptionStringReplacer from "../components/ProductDescriptionStringReplacer";
+import styles from '../styles/Home.module.css';
 import { ProductInfo } from "../types/types";
 
 const store = {
@@ -118,7 +120,8 @@ export const CardComponentPage = ({productData}) => {
 export default CardComponentPage;
 
 export const getServerSideProps: GetServerSideProps<CardComponentPageProps> = async () => {
-  const productData: ProductInfo = await require('../public'+store.url.substring(1))
+  const url = await globalStore.get().url
+  const productData: ProductInfo = url ? await require('../public'+url.substring(1)) : null
   return {
     props: {productData: productData}
   }
