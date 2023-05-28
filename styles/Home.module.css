@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'avenir-bold';
+  src: url('/avenir-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'avenir-demibold';
+  src: url('/avenir-demibold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'avenir-medium';
+  src: url('/avenir-medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'avenir-regular';
+  src: url('/avenir-regular.woff2') format('woff2');
+}
+
+.fontBold {
+  font-family: 'avenir-bold'
+}
+
+.fontRegular {
+  font-family: 'avenir-bold'
+}
+
+.fontDemibold {
+  font-family: 'avenir-demibold'
+}
+
+.fontMedium {
+  font-family: 'avenir-medium'
+}
+
+.launchingSoonIcon {
+  position: absolute;
+  translate: middle;
+  width: 200px;
+  z-index: 100;
+  transform: translate(-18px, 15px)
+}
