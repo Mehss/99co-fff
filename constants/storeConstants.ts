@@ -1,0 +1,1 @@
+export const K_STORE_KEY_URL = 'url'

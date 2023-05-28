@@ -11,10 +11,7 @@ import { GetServerSideProps } from "next";
 import ProductDescriptionStringReplacer from "../components/ProductDescriptionStringReplacer";
 import styles from '../styles/Home.module.css';
 import { ProductInfo } from "../types/types";
-
-const store = {
-  url: "./mock-api.json"
-};
+import { K_STORE_KEY_URL } from "../constants/storeConstants";
 
 interface CardComponentPageProps {
   productData: ProductInfo;
@@ -120,7 +117,7 @@ export const CardComponentPage = ({productData}) => {
 export default CardComponentPage;
 
 export const getServerSideProps: GetServerSideProps<CardComponentPageProps> = async () => {
-  const url = await globalStore.get().url
+  const url = await globalStore.get(K_STORE_KEY_URL)
   const productData: ProductInfo = url ? await require('../public'+url.substring(1)) : null
   return {
     props: {productData: productData}

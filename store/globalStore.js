@@ -7,8 +7,8 @@ globalStore.set = (key, value) => {
     return store
 }
 
-globalStore.get = () => {
-    return store;
+globalStore.get = (key) => {
+    return store[key];
 }
 
 
