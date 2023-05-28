@@ -41,7 +41,6 @@ export const CardComponentPage = ({productData}) => {
           autoHeight
           centeredSlides
           style={{
-            '--swiper-navigation-color': "#fff",
             maxWidth: 544,
             maxHeight: 300,
           }}

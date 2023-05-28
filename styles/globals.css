@@ -36,3 +36,10 @@ button {
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
